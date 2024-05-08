@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Crear TEcnologia</h1>
+    <div class="card-body">
+        <form th:action="@{/registrar}" method="post" th:object="${tecnologia}">
+            <div class="form-group">
+                <label class="control-label" for="nombres">nombre </label>
+                <input id="nombres" type="text" class="form-control" th:field="*{nombre}"
+                       >
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="des">Descripcion </label>
+                <input id="des" type="text" class="form-control" th:field="*{descripcion}"
+                       required autofocus="autofocus">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="modelo">numReferencia </label>
+                <input id="modelo" type="number" class="form-control" th:field="*{numReferencia}"
+                       required autofocus="autofocus">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="placa">Precio : </label>
+                <input id="placa" type="number" class="form-control" th:field="*{precio}"
+                       required autofocus="autofocus">
+            </div>
+
+
+            <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Guardar</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
